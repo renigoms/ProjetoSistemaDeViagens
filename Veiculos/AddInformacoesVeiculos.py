@@ -9,8 +9,10 @@ def LerDadosJson():
 
 #GRAVAR DADOS NO ARQUIVO JSON:
 def gravardados():
-    with open('BaseDadosVeiculos.json', 'w') as arqJson:
-        json.dump(DiconarioDados, arqJson, indent=3)
+    with open('BaseDadosVeiculos.json', 'w') as arqJson1:
+        json.dump(DiconarioDados, arqJson1, indent=3)
+
+
 
 # CADASTRO EM SE:
 def cadasveiculo():
@@ -65,10 +67,21 @@ def checarplaca():
 # LISTA VEICULOS
 # -------------------------------------------------------------------------------------
 #def listarveiculos():
-'''
-with open('BancoDadosVeiculos.json', 'r') as ler:
-    json.load(ler)
-    veiculos=input('DIGITE O NÚMERO DA PLACA')
-    for info in ler:
-        print(info)
-'''
+
+LerDadosJson()
+for veiculos in DiconarioDados.values():
+    print()
+    print(' |PLACA:',veiculos.get('placa'), end='')
+    print(' | TIPO DE VEICULO: ',veiculos.get('tipo'), end='')
+    print(' | MOTORISTA',veiculos.get('motorista'),'|')
+
+
+
+
+
+
+
+
+
+
+
