@@ -5,8 +5,11 @@ DiconarioDados = {}
 # CADASTRO EM SE:
 def cadasveiculo():
     LerDadosJson()
+    print('***' * 15)
+    print('---' * 3, '  CADASTRO DE VEICULOS ', '---' * 3)
+    print('***' * 15)
     while True:
-        placa = input('Número da Placa')
+        placa = checarplaca()
         tipo = cadastipo()
         motorista = input('DIGITE O NOME DO MOTORISTA>>>')
 
@@ -23,7 +26,8 @@ def cadasveiculo():
         escolha = input('QUER CADASTRAR OUTRO SIM OU NÃO?').lower()
         if escolha == 'nao':
             break
-
+    print('***' * 15)
+    print('***' * 15)
 #GRAVAR DADOS NO ARQUIVO JSON:
 def gravardados():
     with open('BaseDadosVeiculos.json', 'w') as arqJson:
@@ -50,5 +54,8 @@ def cadastipo():
     return x
 # CHECAR SE A PLACA EXISTE:
 def checarplaca():
-    pass
+    placa = input('Número da Placa')
+    if placa in DiconarioDados.keys():
+        return checarplaca()
+    return placa
 cadasveiculo()

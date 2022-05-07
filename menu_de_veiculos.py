@@ -1,3 +1,4 @@
+import bancodedadosVeiculos
 def menuVeiculo():
     print('----------------MENU--------------')
     print('1 - Cadastrar Veiculo')
@@ -12,7 +13,7 @@ def menuVeiculo():
     escolha = int(input(""))
 
     if escolha == 1:
-        pass
+        bancodedadosVeiculos.cadasveiculo()
     elif escolha == 2:
         pass
     elif escolha == 3:
