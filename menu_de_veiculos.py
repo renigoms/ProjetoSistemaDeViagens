@@ -1,4 +1,4 @@
-import bancodedadosVeiculos
+import AddInformacoesVeiculos
 def menuVeiculo():
     print('----------------MENU--------------')
     print('1 - Cadastrar Veiculo')
@@ -10,10 +10,10 @@ def menuVeiculo():
     print('7 - Remover Veiculo')
     print('8 - SAIR')
     print('-'*35)
-    escolha = int(input(""))
+    escolha = int(input("DIGITE UMA DAS OPÇÕES>>>"))
 
     if escolha == 1:
-        bancodedadosVeiculos.cadasveiculo()
+        AddInformacoesVeiculos.cadasveiculo()
     elif escolha == 2:
         pass
     elif escolha == 3:
@@ -28,3 +28,4 @@ def menuVeiculo():
         pass
     else:
         print("Opção inválida!")
+menuVeiculo()

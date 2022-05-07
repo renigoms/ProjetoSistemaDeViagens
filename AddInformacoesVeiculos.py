@@ -1,6 +1,16 @@
 import json
 DiconarioDados = {}
+# LER DADOS NO ARQUIVO JSON / E CHECAR SE JÁ EXISTEM:
+def LerDadosJson():
+    with open('BaseDadosVeiculos.json', 'r+') as arqjson:
+        global DiconarioDados
+        DiconarioDados = json.load(arqjson)
 
+
+#GRAVAR DADOS NO ARQUIVO JSON:
+def gravardados():
+    with open('BaseDadosVeiculos.json', 'w') as arqJson:
+        json.dump(DiconarioDados, arqJson, indent=3)
 
 # CADASTRO EM SE:
 def cadasveiculo():
@@ -28,15 +38,7 @@ def cadasveiculo():
             break
     print('***' * 15)
     print('***' * 15)
-#GRAVAR DADOS NO ARQUIVO JSON:
-def gravardados():
-    with open('BaseDadosVeiculos.json', 'w') as arqJson:
-        json.dump(DiconarioDados, arqJson, indent=3)
-# LER DADOS NO ARQUIVO JSON / E CHECAR SE JÁ EXISTEM:
-def LerDadosJson():
-    with open('BaseDadosVeiculos.json', 'r+') as arqjson:
-        global DiconarioDados
-        DiconarioDados = json.load(arqjson)
+
 # FUNÇAO QUE CHECA OS VALORES PARA CARRO E MOTO:
 def cadastipo():
     x = None
@@ -54,8 +56,19 @@ def cadastipo():
     return x
 # CHECAR SE A PLACA EXISTE:
 def checarplaca():
-    placa = input('Número da Placa')
+    placa = input('Digite o Número da Placa>>>')
     if placa in DiconarioDados.keys():
         return checarplaca()
     return placa
-cadasveiculo()
+# --------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------
+# LISTA VEICULOS
+# -------------------------------------------------------------------------------------
+#def listarveiculos():
+'''
+with open('BancoDadosVeiculos.json', 'r') as ler:
+    json.load(ler)
+    veiculos=input('DIGITE O NÚMERO DA PLACA')
+    for info in ler:
+        print(info)
+'''
